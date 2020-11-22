@@ -10,8 +10,8 @@ pipeline {
         stage('Push image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-credential', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                    sh "docker login -u $USER -p $PASS"
-                    sh "docker push $USER/spring-boot:${env.BUILD_ID}"
+                    sh "docker login -u salvadiazpesci -p 40750160sdsd"
+                    sh "docker push salvadiazpesci/spring-boot:${env.BUILD_ID}"
                 }
             }
         }
