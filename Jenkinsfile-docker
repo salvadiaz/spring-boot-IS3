@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 git(url: 'https://github.com/salvadiaz/spring-boot-IS3.git', branch: 'main', poll: true)
-                sh "docker build -t salvadiazpesci/spring-boot:${env.BUILD_ID} ."
+                sh "docker build -t salvadiazpesci/spring-boot ."
             }
         }
         stage('Push image') {
