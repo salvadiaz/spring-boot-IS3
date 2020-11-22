@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git(url: 'https://github.com/salvadiaz/spring-boot-IS3.git', branch: 'main', poll: true)
+                sh "git clone https://github.com/salvadiaz/spring-boot-IS3.git"
                 sh "docker build -t salvadiazpesci/spring-boot ."
             }
         }
