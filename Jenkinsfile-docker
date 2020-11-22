@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-credential', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                     sh "docker login -u $USER -p $PASS"
-                    sh "docker push salvadiazpesci/spring-boot:${env.BUILD_ID}"
+                    sh "docker push $USER/spring-boot:${env.BUILD_ID}"
                 }
             }
         }
